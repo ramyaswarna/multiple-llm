@@ -1,9 +1,16 @@
 import streamlit as st
 from transformers import AutoModelForCausalLM, AutoTokenizer, pipeline
 import torch
-from langchain.llms import HuggingFacePipeline
+from langchain_community.llms import HuggingFacePipeline
 from langchain.chains import LLMChain
 from langchain.prompts import PromptTemplate
+import asyncio
+
+try:
+    asyncio.get_running_loop()
+except RuntimeError:
+    asyncio.set_event_loop(asyncio.new_event_loop())
+
 
 models = {
     "Qwen/Qwen2-0.5B": "Qwen2-0.5B (500M parameters)",
