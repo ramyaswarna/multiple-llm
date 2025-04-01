@@ -1,7 +1,7 @@
 import streamlit as st
 import requests
 
-API_URL = "https://https://multiple-llm-backend.onrender.com/generate/"  # Update this after backend deploy
+API_URL = "https://multiple-llm-backend.onrender.com/generate/"  # Update this after backend deploy
 
 models = {
     "Qwen/Qwen2-0.5B": "Qwen2-0.5B (500M parameters)",
