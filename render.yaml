@@ -3,5 +3,5 @@ services:
     name: llm-backend
     env: python
     buildCommand: pip install -r backend/requirements.txt
-    startCommand: python backend/server.py
+    startCommand: python backend/app.py
     plan: starter  # or standard if needed
