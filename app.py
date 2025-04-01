@@ -4,12 +4,11 @@ import torch
 from langchain_community.llms import HuggingFacePipeline
 from langchain.chains import LLMChain
 from langchain.prompts import PromptTemplate
-import asyncio
 
-try:
-    asyncio.get_running_loop()
-except RuntimeError:
-    asyncio.set_event_loop(asyncio.new_event_loop())
+# import asyncio
+# if asyncio.get_event_loop().is_closed():
+#     asyncio.set_event_loop(asyncio.new_event_loop())
+
 
 
 models = {

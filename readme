@@ -1,0 +1,2 @@
+pipenv shell
+strealit run app.py
