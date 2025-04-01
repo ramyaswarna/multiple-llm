@@ -1,5 +1,6 @@
 # backend/server.py
 from fastapi import FastAPI, HTTPException
+from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 from transformers import AutoModelForCausalLM, AutoTokenizer, pipeline
 from langchain_community.llms import HuggingFacePipeline
@@ -7,6 +8,15 @@ from langchain.chains import LLMChain
 from langchain.prompts import PromptTemplate
 
 app = FastAPI()
+
+# ✅ Enable CORS
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],  # you can later restrict to ["https://interactive-chatbot-llm.streamlit.app"]
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 models = {
     "Qwen/Qwen2-0.5B": "Qwen2-0.5B (500M parameters)",
